@@ -1,0 +1,21 @@
+$light-grey: #F4F4F4;
+$dark-grey: #525252;
+
+nav {
+  background-color: $light-grey;
+  a {
+    color: $dark-grey;
+  }
+}
+
+.splash {
+  height: 30em; 
+  
+  background-color: $light-grey;
+  
+  .logo {
+    margin-top: 6em;
+    margin-bottom: 3em;
+  }
+  
+}

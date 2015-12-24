@@ -1,6 +1,12 @@
 $light-grey: #F4F4F4;
 $dark-grey: #525252;
 
+%serif {
+ font-family: 'Roboto Slab', serif; 
+  
+}
+
+
 nav {
   background-color: $light-grey;
   a {
@@ -9,7 +15,7 @@ nav {
 }
 
 .splash {
-  height: 30em; 
+  height: 35em; 
   
   background-color: $light-grey;
   
@@ -18,4 +24,48 @@ nav {
     margin-bottom: 3em;
   }
   
+  .aboutblurb {
+    @include grid-column(12);
+//    @inlcude grid-column-offset(1);
+    
+    @include breakpoint(medium) {
+      @include grid-column(4);
+      @include grid-column-offset(1);
+    }
+    
+
+    @extend %serif;
+    padding-top: 5px;
+
+    p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+  }
+  
+  .emailform {
+    @include grid-column(10);
+    @include grid-column-offset(1);
+    
+    @include breakpoint(medium) {
+      @include grid-column(4);
+      @include grid-column-offset(2);
+    }
+      
+    @include grid-column-end;
+  }
+  
+  #mc-embedded-subscribe {
+    @include grid-column(12);
+    @include button;
+    
+    margin-right: 0;
+    
+  }
+  
+}
+
+
+.about {
+  margin: 3em auto;
 }

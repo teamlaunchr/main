@@ -1,5 +1,10 @@
+// GLOBAL VARIABLES
+
 $light-grey: #F4F4F4;
 $dark-grey: #525252;
+
+
+// SASS COMPONENTS
 
 %serif {
  font-family: 'Roboto Slab', serif; 
@@ -7,12 +12,22 @@ $dark-grey: #525252;
 }
 
 
+// GENERAL STYLES
+
 nav {
   background-color: $light-grey;
   a {
     color: $dark-grey;
   }
 }
+
+
+section {
+  padding: 3em auto;
+}
+
+
+// HOME PAGE
 
 .splash {
   height: 35em; 
@@ -65,7 +80,17 @@ nav {
   
 }
 
-
 .about {
   margin: 3em auto;
+}
+
+
+footer {
+  height: 3em;
+  background-color: $dark-grey;
+}
+
+.partners {
+  height: 20em;
+  background-color: $light-grey;
 }

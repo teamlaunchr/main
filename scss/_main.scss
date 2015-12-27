@@ -8,7 +8,6 @@ $primary-color: #D02139;
 
 %serif {
  font-family: 'Roboto Slab', serif; 
-  
 }
 
 
@@ -17,6 +16,8 @@ $primary-color: #D02139;
 h1, h2, h3, h4, h5 {
   font-weight: 100;
 }
+
+p { @extend %serif; }
 
 a {
   position: relative;
@@ -34,11 +35,7 @@ nav {
   text-transform: uppercase;
   font-weight: bold;
   font-size: .9em;
-  
 
-  
-  
-  
   a {
     color: $dark-grey;
   }
@@ -48,7 +45,6 @@ nav {
     a:hover {
       color: #000;
     }
-
 
     a:before {
       content: '';
@@ -68,8 +64,7 @@ nav {
   a:hover:before {
     visibility: visible;
     transform: scaleX(1);
-  }  
-  
+  }   
 }
 
 
@@ -89,9 +84,8 @@ footer {
     font-size: 0.8em;
     color: $light-grey;
     
-    a {
-      color: #faaaaa;
-    }
+    a { color: lighten($primary-color, 40); }
+    a:hover { color: inherit; }
   }
   
   .socialbar {
@@ -106,7 +100,6 @@ footer {
         margin-top: 0;
         margin-bottom: 0;
       }
-      
     }
     
     a {
@@ -116,24 +109,14 @@ footer {
         transition: 0.2s ease-in-out 0s;
       }
     }
-  }
-  
-  
+  }  
 }
-
-
-
-
 
 
 // HOME PAGE
 
-
-
-
 .splash {
   height: 40em;
-  padding-top: 2em;
   background-color: $light-grey;
   
   .logo {
@@ -148,33 +131,30 @@ footer {
     margin-top: 0;
     margin-bottom: 0;
   }
-  p {
-    text-align: center;
-  }
+  
   
   .tagline {
     @inlcude grid-row;
     @include grid-column(12);
-    margin-bottom: 1em;
-    font-size: 1.2em;
+    margin-bottom: 2em;
+    font-size: 1.3em;
     @extend %serif;
+    text-align: center;
     
-    
+      
     @include breakpoint(medium) {
       @include grid-column(10);
       @include grid-column-offset(1);
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
-  
+
   }
   
   .aboutblurb {
     @include grid-column(12);
     padding-top: 5px;
+    text-align: center;
 
-    
-    
-    
     @include breakpoint(medium) {
       @include grid-column(4);
       @include grid-column-offset(1);
@@ -200,9 +180,7 @@ footer {
     @include button;
     
     margin-right: 0;
-    
   }
-  
 }
 
 .about {
@@ -217,23 +195,35 @@ footer {
 
 // PROGRAM
 
-.programWrapper {
-  z-index: -1;
-  height: 100%;
+#programHeader {
+  height: 10em;
+  background-color: $primary-color;
   
+  
+ h2 { 
+  text-align: center; 
+  color: #eee;
+  }
+  
+}
+.programWrapper {
+  
+  section {
+    @include grid-column(12);
+    @include grid-column-collapse;
+    
+  }
 }
 
 .sidebar {
   @include grid-column(12);
-  
+
   @include breakpoint(medium) {
       @include grid-column(3);
   }
-
   
-  height: 10em;
-  background-color: $dark-grey;
-  
+  padding: 1em;
+  position: absolute;
 }
 
 
@@ -242,36 +232,33 @@ footer {
   
   @include breakpoint(medium) {
     @include grid-column(9);
-    @include grid-column-offset(3);
+    @include grid-col-pos(3);
   }
+  
+
 }
 
-#programOverview {
-  
-  height: 30em;
-  background-color: $primary-color;
-  color: white;
-  
+
+#programOverview { 
+//  height: 30em;
+  background-color: $light-grey;
+  color: white; 
 }
 
 #format {
-  
-  height: 30em;
+//  height: 30em;
+
 }
 
 #importantDates {
-  height: 30em;
+//  height: 30em;
   background-color: $light-grey;
 }
 
 #yo {
-  height: 30em;
+//  height: 30em;
   background-color: $dark-grey;
 }
-
-
-
-
 
 
 // FAQ
@@ -288,22 +275,31 @@ footer {
   
   a {
     font-weight: bold;
-    color: #faaaaa;
+    color: lighten($primary-color, 40); 
   }
   
   a:hover {
-    color: #999;
+    color: #959595;
   }
 }
 
-.faqanswers {
+.backtotop {
+  @include grid-column(12);
+  background-color: white;
+  opacity: 0.9;
+  text-align: center;
+  z-index: 2;
+}
+
+#faqanswers {
   @include grid-column(10);
   @include grid-column-offset(1);
+  @include grid-column-end;
   
   @include breakpoint(medium) {
     @include grid-column(8);
     @include grid-column-offset(2);
-    
+    @include grid-column-end;
   }
 
   p {
@@ -314,8 +310,4 @@ footer {
     color: $primary-color; 
     font-weight: 500;
   }
-  
-  
 }
-
-

@@ -14,7 +14,7 @@ $primary-color: #D02139;
 // GENERAL STYLES
 
 h1, h2, h3, h4, h5 {
-  font-weight: 100;
+  font-weight: 200;
 }
 
 p { @extend %serif; }
@@ -196,7 +196,6 @@ footer {
 // PROGRAM
 
 #programHeader {
-  height: 10em;
   background-color: $primary-color;
   
   
@@ -224,6 +223,11 @@ footer {
   
   padding: 1em;
   position: absolute;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+  
+
 }
 
 
@@ -234,36 +238,29 @@ footer {
     @include grid-column(9);
     @include grid-col-pos(3);
   }
-  
-
 }
 
 
-#programOverview { 
-//  height: 30em;
+#ourMission { 
   background-color: $light-grey;
-  color: white; 
 }
 
 #format {
-//  height: 30em;
 
 }
 
 #importantDates {
-//  height: 30em;
-  background-color: $light-grey;
+  
 }
 
-#yo {
-//  height: 30em;
-  background-color: $dark-grey;
+#lookingFor {
+  background-color: $light-grey;
 }
 
 
 // FAQ
 
-.faqlinks {
+#faqlinks {
   height: 20em;
   background-color: $dark-grey; 
   
@@ -285,6 +282,7 @@ footer {
 
 .backtotop {
   @include grid-column(12);
+  padding: 0.5em;
   background-color: white;
   opacity: 0.9;
   text-align: center;

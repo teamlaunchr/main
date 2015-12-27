@@ -10,7 +10,7 @@
 </head>
 <body>
   
-  <nav class="top-bar">
+  <nav class="top-bar" id="top">
     <div class="top-bar-left">
       <ul class="menu">
         <li><a href="/index.html">Home</a></li>
@@ -23,7 +23,7 @@
   
   
   <div >
-  <section class="faqlinks">
+  <section id="faqlinks">
 
     <div class="row">
       <h2>Questions? We've got answers!</h2>
@@ -45,7 +45,12 @@
   </section>
 
 
+  <div class="backtotop">
+    <a href="#faqlinks">Scroll back to questions.</a> 
+  </div>
   <section id="faqanswers" class="small-centered">
+
+    
     <p id="answer1">
       <h3>Questions 1?</h3>
       Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff.
@@ -58,6 +63,16 @@
   
     <p id="answer3">
       <h3>Questions 3?</h3>
+      Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff.
+    </p>
+  
+    <p id="answer4">
+      <h3>Questions 4?</h3>
+      Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff.
+    </p>
+  
+    <p id="answer5">
+      <h3>Questions 5?</h3>
       Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff. Lots and lots of stuff.
     </p>
   
@@ -85,7 +100,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
 <script>
-      $(document).foundation();
+  $(document).foundation();
+  
+  //  foundation's sticky function is terrible... I wrote my own
+  $(function() {
+    var top = $('.backtotop').offset().top;
+    $(window).scroll(function() {
+      var screenTop = $(document).scrollTop();
+      if (top < screenTop) {
+        $('.backtotop').css({position: 'fixed', top: 0}); 
+      } else {
+        $('.backtotop').css({position: 'absolute', top: ''});
+      }  
+    });
+  });
+  
+  $('.backtotop a, #faqlinks a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+  });
+  
 </script>
 </body>
 </html>

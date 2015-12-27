@@ -10,16 +10,17 @@
 </head>
 <body>
  
-  <nav class="top-bar" id="top">
+  <nav class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/program.html">Program</a></li>
         <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="mailto:launchr@rutgers.edu">contact us</a></li>
+        <li><a href="mailto:launchr@rutgers.edu">email us</a></li>
       </ul>
     </div>
   </nav>
+  
   
   <section id="programHeader">
     <div class="row">
@@ -28,7 +29,11 @@
   </section>
   
   
-  <div class="sidebar">
+  <div class="sidebar stick">
+    <div class="hideandshow show-for-small-only">
+      <a>Show menu</a>
+    </div>
+    
     <ul class="vertical menu">
       <li><a href="#ourMission">Our mission</a></li>
       <li>
@@ -44,10 +49,8 @@
       <li><a href="#importantDates">Important dates</a></li>
     </ul>
   </div>
-  
-  <div class="programWrapper">
 
-  
+  <div class="programWrapper">
     <section id="ourMission" >
       <div class="programContent">
         <h3>Our mission.</h3>
@@ -93,7 +96,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="lookingFor">
       <div class="programContent">
         <h3>What we're looking for.</h3>
@@ -116,7 +119,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="importantDates">
       <div class="programContent">
         <h3>Important dates.</h3>
@@ -139,9 +142,10 @@
         </div>
       </div>
     </section>
-          
-    
+
+
   </div>
+
   
   <footer>
     <div class="row">
@@ -180,13 +184,34 @@
     });
   });
   
-  $('.sidebar a').click(function(){
+  $('.menu a').click(function(){
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
   });
+  
+  var shownav = false;
 
+  $('.hideandshow a').click(function(e){
+    e.preventDefault();  
+    if (!shownav) {
+      $('.sidebar .menu').css({
+        visibility: 'visible',
+        backgroundColor: 'white'
+
+      });
+      shownav = true;
+      $('hideandshow a').html('Hide nav');
+    } else {
+      $('.sidebar .menu').css({
+        visibility: 'hidden',
+        backgroundColor: ''
+      });
+      shownav = false;
+      $('hideandshow a').html('Show nav');
+    }
+  });
   
 </script>
 </body>

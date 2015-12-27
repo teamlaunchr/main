@@ -120,7 +120,7 @@ footer {
 // HOME PAGE
 
 .splash {
-  height: 40em;
+//  height: 40em;
   background-color: $light-grey;
   
   .logo {
@@ -166,7 +166,7 @@ footer {
   
   }
   
-  .emailform {
+  .actions {
     @include grid-column(10);
     @include grid-column-offset(1);
     padding-top: 2em;
@@ -181,9 +181,20 @@ footer {
   
   #mc-embedded-subscribe {
     @include grid-column(12);
-    @include button;
-    
+    @include button($style: hollow)
     margin-right: 0;
+  }
+  
+  .apply {
+    @include grid-column(12);
+    padding-bottom: 2em;
+    padding-top: 3em;
+    
+    a {
+      @include button($expand: true); 
+      @include button-disabled;
+      
+    }
   }
 }
 

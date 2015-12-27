@@ -78,7 +78,7 @@ section {
 }
 
 footer {
-  bottom: 0;
+  @include grid-column(12);
   padding: 1em 0;
 
   background-color: $dark-grey;
@@ -96,7 +96,6 @@ footer {
   
   .socialbar {
     @include grid-column(4);
-      
     
     img {
       height: 1.5em;
@@ -300,14 +299,13 @@ footer {
 .faqanswers {
   @include grid-column(10);
   @include grid-column-offset(1);
-  @include grid-column-end;
   
   @include breakpoint(medium) {
     @include grid-column(8);
     @include grid-column-offset(2);
     
   }
-  
+
   p {
     padding-bottom: 1em;
   }

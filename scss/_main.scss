@@ -353,7 +353,7 @@ body {
 
 .header.panel {
   margin: 3rem auto;
-  border: 2px solid $light-grey;
+  border: 25px solid $light-grey;
   background: $light-grey;
   
   p {
@@ -368,26 +368,17 @@ body {
       font-weight: bold;
     }
   }
-  
-  .sign {
-    background: $light-grey;
-    width: 300px;
-    height: 2.4rem;
-    border: 2px solid #fff;
-    position: relative;
-    top: -2.5rem;
-    margin: auto;
     
     h1 {
         text-transform: uppercase;
       font-family: 'Roboto Slab';
         font-weight: bold;
-        font-size: 7rem;
+        font-size: 15rem;
       letter-spacing: 3px;
       color: #444;
-      font-size: 70%;
+      font-size: 100%;
       text-align: center;
       line-height: 2rem;
     }
-  }
+  
 }

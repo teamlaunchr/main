@@ -205,7 +205,7 @@ footer {
 }
 
 .partners {
-  height: 20em;
+  height: 25em;
   background-color: $light-grey;
 }
 
@@ -382,3 +382,60 @@ body {
     }
   
 }
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../assets/demos/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.modalDialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	opacity:0;
+    overflow: scroll;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 90%;
+	position:relative;
+	margin: 5% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+    
+}
+
+.close {
+	background: #FFFFFF;
+	color: #606061;
+	line-height: 40px;
+	position: absolute;
+	right: 14px;
+	text-align: center;
+	top: 12px;
+	width: 40px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.close:hover { background: #00d9ff; }

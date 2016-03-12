@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
   <title>LaunchR | Welcome</title>
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/app.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
+    <!-- MDL -->
+    <link rel="stylesheet" href="mdl/material.min.css">
+    <script src="mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <body>
  
@@ -16,10 +22,13 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="program.html">Program</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="mailto:launchr@rutgers.edu">email us</a></li>
+          <li><a href="mailto:launchr@rutgers.edu">email us</a></li>
       </ul>
     </div>
     <div class="top-bar-right">
+        <ul class = "menu">
+            <li><button id="show-dialog" type="button" class="mdl-button">Log In</button></li>
+        </ul>
       
     </div>
   </nav>
@@ -47,7 +56,7 @@
 
       </div>
       <div class="apply">
-        <a href="https://www.f6s.com/launchr">Application open January 1st.</a>
+        <a href="https://www.f6s.com/launchr">Applications are no longer being accepted.</a>
       </div>
 
     </div>
@@ -97,13 +106,25 @@
     <div class="row small-up-12 medium-up-4">
       <div class="columns small-12 medium 4">
         <img src="img/partners/doe-logo.png">
+          <br>
       </div>
         <div class="columns small-12 medium 4">
         <img src="img/partners/restext.png">
+            <br>
       </div>
         <div class="columns small-12 medium 4">
         <img src="img/partners/ruvc.png">
+            <br>
       </div>
+    </div>
+      
+    <div class="row">
+        <div class="columns small-12 medium-12">
+            <br>
+            <hr>
+            <p style="text-align:center">If you're interested in partnering with LaunchR, please email us at <a href="mailto:launchr@rutgers.edu">launchr@rutgers.edu</a></p>
+            <br>
+        </div>
     </div>
 
   </section>
@@ -126,6 +147,14 @@
       </div>
     </div>
   </footer>
+    
+    <div id="openLoginDialog" class="modalDialog">
+	       <div>
+		      <a href="#close" title="Close" class="close">X</a>
+		      <h2>Login to Launchr</h2>
+               
+	       </div>
+        </div>
 
  
 
@@ -134,5 +163,44 @@
 <script>
       $(document).foundation();
 </script>
+    
+   
+    
+    <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Login</h4>
+    <div class="mdl-dialog__content">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Email Address</label>
+          </div>
+            
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="password" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Password</label>
+          </div>
+        </form>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Login</button>
+    </div>
+  </dialog>
+  <script>
+    var dialog = document.querySelector('dialog');
+      var showDialogButton = document.querySelector('#show-dialog');
+      if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
+        showDialogButton.addEventListener('click', function() {
+          dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function() {
+          dialog.close();
+        });
+  </script>
+    
+    </div>
+
+    
 </body>
 </html>
